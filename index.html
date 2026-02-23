@@ -67,6 +67,7 @@
       <div class="columns is-centered">
         <div class="column has-text-centered">
           <h1 class="title is-1 publication-title">MatchED: Crisp Edge Detection Using End-to-End, Matching-based Supervision</h1>
+    	  <h1 style="font-size:30px;font-weight:bold">CVPR 2026</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               Bedrettin Cetinkaya<sup>1</sup>
@@ -83,7 +84,7 @@
 			<span class="author-block"><sup>*</sup>(Equal Contribution)</span>
           </div>
 
-    	  <h1 style="font-size:24px;font-weight:bold">CVPR 2026</h1>
+    	
 			
           <div class="column has-text-centered">
             <div class="publication-links">
@@ -140,6 +141,70 @@
   </div>
 </section>
 
+	<section class="section" id="QuantitativeResults">
+  <div class="container is-max-desktop content">
+    <h2 class="title has-text-centered">Quantitative Results</h2>
+
+    <p>
+      <strong>MatchED</strong> significantly outperforms state-of-the-art crisp edge detection methods 
+      in terms of the <strong>Average Crispness (AC)</strong> metric on three benchmarks: 
+      <strong>BSDS</strong>, <strong>Multi-Cue</strong>, and <strong>BIPED</strong>.
+    </p>
+
+    <div class="table-container">
+      <table class="table is-striped is-hoverable is-fullwidth">
+	    <colgroup>
+        <col style="width: 40%;">
+        <col style="width: 20%;">
+        <col style="width: 20%;">
+        <col style="width: 20%;">
+        </colgroup>
+        <thead>
+          <tr>
+            <th>Method</th>
+            <th>BSDS</th>
+            <th>Multi-Cue</th>
+            <th>BIPED</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="http://openaccess.thecvf.com/content/ICCV2021/papers/Su_Pixel_Difference_Networks_for_Efficient_Edge_Detection_ICCV_2021_paper.pdf" target="_blank">PiDiNet</a> + <a href="https://openaccess.thecvf.com/content_ECCV_2018/papers/Ruoxi_Deng_Learning_to_Predict_ECCV_2018_paper.pdf" target="_blank">Dice Loss</a></td>
+            <td>.306</td>
+            <td>.208</td>
+            <td>.340</td>
+          </tr>
+          <tr>
+            <td><a href="http://openaccess.thecvf.com/content/ICCV2021/papers/Su_Pixel_Difference_Networks_for_Efficient_Edge_Detection_ICCV_2021_paper.pdf" target="_blank">PiDiNet</a> + <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9442882" target="_blank">Tracing Loss</a></td>
+            <td>.333</td>
+            <td>.217</td>
+            <td>.296</td>
+          </tr>
+          <tr>
+            <td><a href="http://openaccess.thecvf.com/content/ICCV2021/papers/Su_Pixel_Difference_Networks_for_Efficient_Edge_Detection_ICCV_2021_paper.pdf" target="_blank">PiDiNet</a> + <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=10168686" target="_blank">Label Refinement</a></td>
+            <td>.424</td>
+            <td>.424</td>
+            <td>.512</td>
+          </tr>
+          <tr>
+            <td><a href="https://ojs.aaai.org/index.php/AAAI/article/view/28490" target="_blank">DiffusionEdge</a></td>
+            <td>.476</td>
+            <td>.462</td>
+            <td>.849</td>
+          </tr>
+          <tr>
+            <td><a href="http://openaccess.thecvf.com/content/ICCV2021/papers/Su_Pixel_Difference_Networks_for_Efficient_Edge_Detection_ICCV_2021_paper.pdf" target="_blank">PiDiNet</a> + <strong>MatchED</strong></a></td>
+            <td><strong>.930</strong></td>
+            <td><strong>.810</strong></td>
+            <td><strong>.941</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+	
 <section class="section" id="VisualResults">
   <div class="container is-max-desktop content">
     <h2 class="title has-text-centered">Visual Results</h2>
