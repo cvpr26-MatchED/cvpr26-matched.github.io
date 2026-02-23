@@ -1,101 +1,297 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="utf-8">
+  <meta name="description"
+        content="MatchED: Crisp Edge Detection Using End-to-End, Matching-based Supervision.">
+  <meta name="keywords" content="MatchED">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>MatchED: Crisp Edge Detection Using End-to-End, Matching-based Supervision | CVPR 2026</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <title>MatchED: Crisp Edge Detection Using End-to-End, Matching-based Supervision</title>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
 
   <style>
-    body {
-      font-family: 'Google Sans', sans-serif;
-      background-color: #f5f5f5;
+    .img-magnifier-container {
+      position: relative;
+      display: inline-block;
     }
-    .hero {
-      background-color: white;
-    }
-    .publication-title {
-      font-weight: 700;
-      color: #363636;
-    }
-    .coming-soon-box {
-      background: white;
-      border-radius: 12px;
-      padding: 3rem;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-      margin-top: 2rem;
-    }
-    .timer-text {
-      font-weight: 500;
-      color: #7a7a7a;
-      letter-spacing: 1px;
-      text-transform: uppercase;
+
+    .img-magnifier-glass {
+      position: absolute;
+      border: 2px solid #333;
+      border-radius: 4px;
+      cursor: none;
+      width: 200px;
+      height: 150px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+      display: none; 
+      z-index: 99;
+      pointer-events: none; 
     }
   </style>
 </head>
 <body>
 
-<section class="hero is-fullheight">
+<section class="hero">
   <div class="hero-body">
-    <div class="container is-max-desktop has-text-centered">
-      
-      <h1 class="title is-1 publication-title">
-        MatchED: Crisp Edge Detection Using End-to-End, Matching-based Supervision
-      </h1>
-      
-      <div class="is-size-5 publication-authors mb-4">
-        <span class="author-block">
-          <a href="#" style="color: #007bff; text-decoration: none;">Bedrettin Cetinkaya</a><sup>1</sup>,
-        </span>
-        <span class="author-block">
-          <a href="#" style="color: #007bff; text-decoration: none;">Sinan Kalkan</a><sup>1</sup>
-        </span>
-        <span class="author-block">
-          <a href="#" style="color: #007bff; text-decoration: none;">Emre Akbas</a><sup>1</sup>
-        </span>		
-      </div>
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">MatchED: Crisp Edge Detection Using End-to-End, Matching-based Supervision</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              Bedrettin Cetinkaya<sup>1</sup>
+            <span class="author-block">
+              <a href="https://kovan.ceng.metu.edu.tr/~sinan/">Sinan Kalkan</a><sup>1,2,*</sup>,</span>
+            <span class="author-block">
+              <a href="https://user.ceng.metu.edu.tr/~emre/">Emre Akbas</a><sup>1,2,*</sup>,
+            </span>
+          </div>
 
-      <div class="is-size-5 publication-authors mb-6">
-        <span class="author-block"><sup>1</sup>Middle East Technical University (METU)</span>
-      </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Middle East Technical University,</span>
+            <span class="author-block"><sup>2</sup>METU ROMER Robotics Center,</span>
+			<span class="author-block"><sup>*</sup>(Equal Contribution)</span>
+          </div>
 
-      <div class="column is-centered has-text-centered">
-        <span class="tag is-info is-large is-light">CVPR 2026</span>
-      </div>
-
-      <div class="container coming-soon-box">
-        <h2 class="title is-3">🚧 Project Page Under Construction</h2>
-        <p class="subtitle is-5 mt-4">
-          We are currently preparing the paper, code, and supplementary materials for the community.
-        </p>
-        
-        <div class="mt-6">
-          <p class="timer-text">Coming June 2026</p>
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2011.12948"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2011.12948"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://github.com/google/nerfies"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span>
+            </div>
+          </div>
         </div>
-
-        <div class="buttons is-centered mt-6">
-          <a class="button is-dark is-rounded is-static">
-            <span class="icon"><i class="fas fa-file-pdf"></i></span>
-            <span>Paper (ArXiv Soon)</span>
-          </a>
-          <a class="button is-dark is-rounded is-static">
-            <span class="icon"><i class="fab fa-github"></i></span>
-            <span>Code (Soon)</span>
-          </a>
-        </div>
       </div>
-
-      <div class="mt-6">
-        <p class="is-size-6">
-          For inquiries, please contact <strong>bckaya@metu.edu.tr</strong>
-        </p>
-      </div>
-
     </div>
   </div>
 </section>
+
+<section class="section" id="Overview">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Overview</h2>
+    
+    <div class="has-text-centered">
+      <figure class="image">
+		 <img src="static/images/teaser.png" alt="MatchED Overview" style="width: 60%; height: auto; margin-left: auto; margin-right: auto;">         <figcaption class="has-text-justified mt-4" style="font-size: 0.95rem;">
+          (a) Existing edge detectors require the use of a hand-crafted post-processing stage (e.g., NMS and thinning). (b) With <strong>MatchED</strong>, we generate a one-pixel-wide edge map in an end-to-end trainable manner. The recent <a href="https://ojs.aaai.org/index.php/AAAI/article/view/28490" target="DiffusionEdge"> DiffusionEdge’s </a> results (c) improve when integrated with <strong>MatchED</strong> (d).
+        </figcaption>
+      </figure>
+    </div>
+
+    <p class="mt-6">
+      Our proposed framework, <strong>MatchED</strong>, is a lightweight, <strong>plug-and-play</strong> supervision module that adds only <strong>~21K parameters</strong>. It can be seamlessly appended to any edge detection model, enabling <strong>joint, end-to-end learning</strong> of crisp edges.
+    </p>
+  </div>
+</section>
+
+<section class="section" id="VisualResults">
+  <div class="container is-max-desktop content">
+    <h2 class="title has-text-centered">Visual Results</h2>
+    
+<p>
+<strong>MatchED</strong> delivers a substantial improvement in edge crispness across diverse architectures and datasets. When integrated as a <strong>plug-and-play</strong> module into models like 
+<a href="https://ojs.aaai.org/index.php/AAAI/article/view/28490" target="_blank">DiffusionEdge</a> or 
+<a href="http://openaccess.thecvf.com/content/ICCV2021/papers/Su_Pixel_Difference_Networks_for_Efficient_Edge_Detection_ICCV_2021_paper.pdf" target="_blank">PiDiNet</a>, 
+it consistently produces sharper edges without using traditional post-processing.
+</p>
+    <div class="columns is-centered">
+      <div class="column is-full has-text-centered">
+        <figure class="image">
+          <div class="img-magnifier-container">
+            <img id="zoom-bsds" src="static/images/bsds_diffEdge_vis.png" alt="BSDS DiffusionEdge Comparison" style="width: 100%; height: auto;">
+          </div>
+          <figcaption class="has-text-justified mt-4">
+            Qualitative comparisons on BSDS dataset using <a href="https://ojs.aaai.org/index.php/AAAI/article/view/28490" target="_blank">DiffusionEdge</a>. We show results from DiffusionEdge (official checkpoint), raw outputs from our pipeline, raw outputs after applying NMS, and their corresponding <strong>MatchED</strong> integrated results, respectively. Best viewed zoomed-in.
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <hr style="margin: 3rem 0;">
+
+    <div class="columns is-centered">
+      <div class="column is-full has-text-centered">
+        <figure class="image">
+          <div class="img-magnifier-container">
+            <img id="zoom-nyu" src="static/images/nyu_pidinet_vis.png" alt="NYUD PiDiNet Comparison" style="width: 100%; height: auto;">
+          </div>
+          <figcaption class="has-text-justified mt-4">
+            Qualitative comparisons on NYUD dataset using <a href="http://openaccess.thecvf.com/content/ICCV2021/papers/Su_Pixel_Difference_Networks_for_Efficient_Edge_Detection_ICCV_2021_paper.pdf" target="_blank">PiDiNet</a>. We show results from PiDiNet (official checkpoint), raw outputs from our pipeline, raw outputs after applying NMS, and their corresponding <strong>MatchED</strong> integrated results, respectively. Best viewed zoomed-in.
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section" id="Acknowledgements">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Acknowledgements</h2>
+    <p>
+    We gratefully acknowledge the computational resources provided by METU-ROMER, Center for Robotics and Artificial Intelligence. Additionally, the numerical calculations reported in this paper were partially performed at TUBITAK ULAKBIM, High Performance and Grid Computing Center (TRUBA resources). 
+   </p>
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{cetinkaya2026matched,
+  author    = {Bedrettin Cetinkaya and Sinan Kalkan and Emre Akbas},
+  title     = {MatchED: Crisp Edge Detection Using End-to-End, Matching-based Supervision},
+  year={2026},
+  booktitle={IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  url={https://cvpr26-matched.github.io/}
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+     		This website is modified from <a
+              href="https://github.com/nerfies/nerfies.github.io"> Nerfies</a> 
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+
+function magnify(imgID, zoom) {
+  var img, glass, w, h, bw;
+  img = document.getElementById(imgID);
+
+  glass = document.createElement("DIV");
+  glass.setAttribute("class", "img-magnifier-glass");
+
+
+  img.parentElement.insertBefore(glass, img);
+
+
+  glass.style.backgroundImage = "url('" + img.src + "')";
+  glass.style.backgroundRepeat = "no-repeat";
+  glass.style.backgroundSize = (img.width * zoom) + "px " + (img.height * zoom) + "px";
+  bw = 3;
+  w = glass.offsetWidth / 2;
+  h = glass.offsetHeight / 2;
+
+
+  glass.addEventListener("mousemove", moveMagnifier);
+  img.addEventListener("mousemove", moveMagnifier);
+  
+
+  img.addEventListener("mouseenter", function() { glass.style.display = "block"; });
+  img.addEventListener("mouseleave", function() { glass.style.display = "none"; });
+
+
+  glass.addEventListener("touchmove", moveMagnifier);
+  img.addEventListener("touchmove", moveMagnifier);
+
+  function moveMagnifier(e) {
+    var pos, x, y;
+    e.preventDefault();
+  
+    pos = getCursorPos(e);
+    x = pos.x;
+    y = pos.y;
+  
+    if (x > img.width) x = img.width;
+    if (x < 0) x = 0;
+    if (y > img.height) y = img.height;
+    if (y < 0) y = 0;
+  
+    var offset = 10;
+    glass.style.left = (x + offset) + "px";
+    glass.style.top  = (y + offset) + "px";
+  
+    glass.style.backgroundPosition =
+      "-" + ((x * zoom) - (glass.offsetWidth / 2)) + "px " +
+      "-" + ((y * zoom) - (glass.offsetHeight / 2)) + "px";
+  }
+
+  function getCursorPos(e) {
+    var a, x = 0, y = 0;
+    e = e || window.event;
+    a = img.getBoundingClientRect();
+    x = e.pageX - a.left;
+    y = e.pageY - a.top;
+    x = x - window.pageXOffset;
+    y = y - window.pageYOffset;
+    return {x : x, y : y};
+  }
+}
+
+
+window.onload = function() {
+  magnify("zoom-bsds", 3); 
+  magnify("zoom-nyu", 3);
+};
+</script>
 
 </body>
 </html>
